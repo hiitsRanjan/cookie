@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Naveen Mart</title>
+    <style>
+        .image{
+            width:150px;
+            height: 120px;
+        }
+        .name{
+            text-align: center;
+            font-size: 18px;
+        }
+        .price{
+            text-align: center;
+            font-size: 16px;
+        }
+        .cart{
+            text-align: center;
+            font-family: "Agency FB";
+            color: gold;
+            background-color: black;
+        }
+        .cart_items{
+            background-color: blue;
+            color: white;
+            font-family: "Agency FB";
+            font-size: 15px;
+            text-align: right;
+        }
+        a{
+            text-decoration: none;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+  <table align="center" border="2" width="1000">
+      <tr>
+          <th colspan="4" style="background-color: orangered;color: white;font-family: 'Agency FB';font-size: 60px">Naveen Mart</th>
+      </tr>
+      <tr>
+          <th colspan="4" class="cart_items"><a href="{% url 'show_cookies' %}" >Cart Items: {{ total_cookies }} </a></th>
+      </tr>
+      {% for k,v in cookies.items %}
+        <tr>
+           <th>{{ k }}</th>
+           <th>{{ v }}</th>
+           <th>
+               <a href="{% url 'delete_cookies' %}?cn={{ k }}" style="color: red">delete</a>
+           </th>
+        </tr>
+      {% endfor %}
+  </table>
+</body>
+</html>

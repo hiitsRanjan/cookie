@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Naveen Mart</title>
+    <style>
+        .image{
+            width:150px;
+            height: 120px;
+        }
+        .name{
+            text-align: center;
+            font-size: 18px;
+        }
+        .price{
+            text-align: center;
+            font-size: 16px;
+        }
+        .cart{
+            text-align: center;
+            font-family: "Agency FB";
+            color: gold;
+            background-color: black;
+        }
+        .cart_items{
+            background-color: blue;
+            color: white;
+            font-family: "Agency FB";
+            font-size: 15px;
+            text-align: right;
+        }
+        a{
+            text-decoration: none;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+  <table align="center" border="2" width="1000">
+      <tr>
+          <th colspan="4" style="background-color: orangered;color: white;font-family: 'Agency FB';font-size: 60px">Naveen Mart</th>
+      </tr>
+      <tr>
+          <th colspan="4" class="cart_items"><a href="{% url 'show_cookies' %}" >Cart Items: {{ total_cookies }} </a></th>
+      </tr>
+      <tr>
+          <th class="image"><img src="{% static 'images/mi.jpg' %}"></th>
+          <th class="image"><img src="{% static 'images/mi5.jpg' %}"></th>
+          <th class="image"><img src="{% static 'images/mi7.jpg' %}"></th>
+          <th class="image"><img src="{% static 'images/mi8.jpg' %}"></th>
+      </tr>
+      <tr>
+          <th class="name">MI</th>
+          <th class="name">MI5</th>
+          <th class="name">MI7</th>
+          <th class="name">MI8</th>
+      </tr>
+      <tr>
+          <th class="price">10000/-</th>
+          <th class="price">12000/-</th>
+          <th class="price">14000/-</th>
+          <th class="price">16000/-</th>
+      </tr>
+      <tr>
+          <th class="cart">
+              <a href="{% url 'cookies_data' %}?name=MI&price=10000">Add To Cart</a>
+          </th>
+          <th class="cart">
+              <a href="{% url 'cookies_data' %}?name=MI5&price=12000">Add To Cart</a>
+          </th>
+          <th class="cart">
+              <a href="{% url 'cookies_data' %}?name=MI7&price=14000">Add To Cart</a>
+          </th>
+          <th class="cart">
+              <a href="{% url 'cookies_data' %}?name=MI8&price=16000">Add To Cart</a>
+          </th>
+      </tr>
+       <tr>
+          <th class="image"><img src="{% static 'images/note4.jpg' %}"></th>
+          <th class="image"><img src="{% static 'images/note5.jpg' %}"></th>
+          <th class="image"><img src="{% static 'images/note6.jpg' %}"></th>
+          <th class="image"><img src="{% static 'images/note6 pro.jpg' %}"></th>
+      </tr>
+      <tr>
+          <th class="name">Note4</th>
+          <th class="name">Note5</th>
+          <th class="name">Note6</th>
+          <th class="name">Note6 Pro</th>
+      </tr>
+      <tr>
+          <th class="price">11000/-</th>
+          <th class="price">13000/-</th>
+          <th class="price">15000/-</th>
+          <th class="price">17000/-</th>
+      </tr>
+      <tr>
+          <th class="cart">Add To Cart</th>
+          <th class="cart">Add To Cart</th>
+          <th class="cart">Add To Cart</th>
+          <th class="cart">Add To Cart</th>
+      </tr>
+  </table>
+</body>
+</html>
